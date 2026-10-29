@@ -1,0 +1,16 @@
+vendor_name: Raisecom ISCOM
+netmiko_driver: raisecom_roap
+commands:
+  ports_status: show port
+  vlan_brief: show vlan
+  mac_table: show mac-address-table
+  counters: show interface statistics
+parsers:
+  ports_status: ^(?P<port>\d+/\d+/\d+)\s+\S+\s+(?P<status>Up|Down)\s+(?P<vlan>\d+)\s+\S+\s+(?P<description>.*)$
+  mac_table: (?P<mac>[0-9a-fA-F]{4}\.[0-9a-fA-F]{4}\.[0-9a-fA-F]{4})\s+(?P<vlan>\d+)\s+\S+\s+(?P<port>\S+)
+  vlan_brief: ^(?P<vlan_id>\d+)\s+(?P<vlan_name>\S+)\s+\S+\s+(?P<status>Enable)
+  counters: Port (?P<port>\S+).*?CRC Errors:\s+(?P<crc>\d+)
+status_mapping:
+  Up: connected
+  Down: notconnect
+  Enable: active

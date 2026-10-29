@@ -1,0 +1,18 @@
+vendor_name: Cisco IOS
+netmiko_driver: cisco_ios
+commands:
+  ports_status: show interfaces status
+  vlan_brief: show vlan brief
+  mac_table: show mac address-table
+  counters: show interfaces
+parsers:
+  ports_status: ^(?P<port>\S+)\s+(?P<description>.*?)\s+(?P<status>connected|notconnect|disabled|err-disabled)\s+(?P<vlan>\d+|trunk)\s+
+  mac_table: (?P<vlan>\d+)\s+(?P<mac>[0-9a-fA-F]{4}\.[0-9a-fA-F]{4}\.[0-9a-fA-F]{4})\s+\S+\s+(?P<port>\S+)
+  vlan_brief: ^(?P<vlan_id>\d+)\s+(?P<vlan_name>[a-zA-Z0-9\-_]+)\s+(?P<status>active|act/lshut)
+  counters: (?P<port>\S+) is (?:up|down).*?(?P<crc>\d+) CRC
+status_mapping:
+  connected: connected
+  notconnect: notconnect
+  disabled: notconnect
+  err-disabled: notconnect
+  active: active

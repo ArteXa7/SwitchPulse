@@ -1,0 +1,15 @@
+vendor_name: D-Link DES/DGS
+netmiko_driver: dlink_ds
+commands:
+  ports_status: show ports
+  vlan_brief: show vlan
+  mac_table: show fdb
+  counters: show error ports
+parsers:
+  ports_status: ^\s*(?P<port>\d+)\s+(?:.*?)\s+(?P<status>LinkUp|LinkDown)\s+(?:.*?)$
+  mac_table: (?P<vlan>\d+)\s+\S+\s+(?P<mac>[0-9a-fA-F\-]{17})\s+\S+\s+(?P<port>\d+)
+  vlan_brief: VID\s+:\s+(?P<vlan_id>\d+)\s+VLAN Name\s+:\s+(?P<vlan_name>\S+)
+  counters: ^\s*(?P<port>\d+)\s+\d+\s+\d+\s+(?P<crc>\d+)
+status_mapping:
+  LinkUp: connected
+  LinkDown: notconnect
