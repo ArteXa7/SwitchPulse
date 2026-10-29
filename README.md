@@ -1,3 +1,7 @@
+[![Release](https://img.shields.io/github/v/release/ArTeXa7/SwitchPulse?color=blue&label=Latest%20Release)](https://github.com/ArTeXa7/SwitchPulse/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+
 # SwitchPulse ⚡
 
 <p align="center">
@@ -9,11 +13,6 @@
 </p>
 
 ---
-
-[![Release](https://img.shields.io/github/v/release/ArTeXa7/SwitchPulse?color=blue&label=Latest%20Release)](https://github.com/ArTeXa7/SwitchPulse/releases/latest)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
-
 
 ## 🚀 Overview
 
