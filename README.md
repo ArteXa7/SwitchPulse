@@ -10,6 +10,11 @@
 
 ---
 
+[![Release](https://img.shields.io/github/v/release/ArTeXa7/SwitchPulse?color=blue&label=Latest%20Release)](https://github.com/ArTeXa7/SwitchPulse/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+
+
 ## 🚀 Overview
 
 **SwitchPulse** is an open-source, modular desktop application built with Python and CustomTkinter, designed to streamline switch diagnostics, port monitoring, VLAN auditing, and automated provisioning across multi-vendor networks (Cisco IOS, Raisecom ROS, D-Link, etc.).
